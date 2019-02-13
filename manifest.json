@@ -1,0 +1,10 @@
+{
+    "name": "Jira sum of story points in column",
+    "version": "1.0",
+    "description": "Jira sum of story points in column",
+    "manifest_version": 2,
+    "content_scripts": [{
+        "js": ["content.js"],
+        "matches": ["https://jira.homecred.it/secure/*"]
+    }]
+}
