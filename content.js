@@ -10,7 +10,7 @@ const callback = function(mutationsList, observer) {
       swimlaneElement && swimlaneElement.querySelectorAll('.ghx-extra-field-content').forEach(story => {
         const time = story.textContent;
         
-        const timeGroups = /((?<weeks>[0-9]+)\sweeks?)?(, )((?<days>[0-9]+)\sdays?)?(, )?((?<hours>[0-9]+)\shours?)?(, )?((?<minutes>[0-9]+)\sminutes?)?/.exec(time).groups;
+        const timeGroups = /((?<weeks>[0-9]+)\sweeks?)?(, )?((?<days>[0-9]+)\sdays?)?(, )?((?<hours>[0-9]+)\shours?)?(, )?((?<minutes>[0-9]+)\sminutes?)?/.exec(time).groups;
       
         if (timeGroups.weeks) {
           storyPoints += Number(timeGroups.weeks) * 7 * 8;
