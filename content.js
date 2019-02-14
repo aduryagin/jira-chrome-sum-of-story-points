@@ -39,9 +39,12 @@ const callback = function(mutationsList, observer) {
     }
 
     storyPointsContainer.textContent = `Story points: ${storyPoints.toFixed(2)}`;
+    document.querySelector('#ghx-pool').style.paddingTop = `${document.querySelector('.ghx-column-headers').clientHeight}px`;
   });
 };
 
-callback();
-const observer = new MutationObserver(callback);
-observer.observe(columns, config);
+if (columns) {
+  callback();
+  const observer = new MutationObserver(callback);
+  observer.observe(columns, config);
+}
