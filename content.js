@@ -9,7 +9,7 @@ const callback = function(mutationsList, observer) {
       const swimlaneElement = swimlane && swimlane.querySelectorAll('.ghx-column.ui-sortable')[columnIndex];
 
       swimlaneElement && swimlaneElement.querySelectorAll('.js-detailview').forEach((task) => {
-        task && !task.querySelector('.ghx-type[title=Story]') && task.querySelectorAll('.ghx-extra-field-content').forEach(timeElement => {
+        task && !task.querySelector('.ghx-type[title=Story]') && !task.querySelector('.ghx-type[title=Bug]') && task.querySelectorAll('.ghx-extra-field-content').forEach(timeElement => {
           const time = timeElement.textContent;
 
           const timeGroups = /((?<weeks>[0-9]+)\sweeks?)?(, )?((?<days>[0-9]+)\sdays?)?(, )?((?<hours>[0-9]+)\shours?)?(, )?((?<minutes>[0-9]+)\sminutes?)?/.exec(time).groups;
